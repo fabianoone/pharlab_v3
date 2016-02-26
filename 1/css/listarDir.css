@@ -1,0 +1,25 @@
+/* 
+    Created on : 25/02/2016, 09:36:01
+    Author     : fabiano
+*/
+.scroll-pane {
+    width: 100% !important;
+    height: 430px !important;
+    overflow: auto !important;
+}
+.jspContainer {
+    height: 430px !important;
+    width: 100% !important;
+}
+.jspVerticalBar {
+    left: auto;
+    right: 30px !important;
+    margin-top: 10px;
+}
+.jspTrack {
+    height: 430px !important;
+}
+.jspDrag {
+    background: #003E7F;
+    height: 50px !important;
+}
