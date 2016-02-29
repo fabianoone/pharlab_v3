@@ -135,3 +135,18 @@ function linkMaterialPromo()
 {
     window.location.assign("mat_promocional.html");
 }
+
+function linkPromo()
+{
+    window.location.assign("promocoes.html");
+}
+
+function linkLancamentos()
+{
+    window.location.assign("lancamentos.html");
+}
+
+function linkVideos()
+{
+    window.location.assign("videos.html");
+}

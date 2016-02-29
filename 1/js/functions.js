@@ -22,22 +22,10 @@ function fileListNouveautes(){
     else{
         var jsonRetour = decodeURI(env_Browse_Directory) ;
         var jsArray = JSON.parse(jsonRetour);
-        var total = jsArray.FILES.length;
-        for(var i = 1 ; i <= total ; i++){
+        for(var i = 0 ; i < jsArray.FILES.length ; i++){
             var fileName = jsArray.FILES[i].FILE;
             var fileNameSplitted = fileName.split(separator);
-            if(i == 1) {
-                html += "<ul>";
-            }
             html += "<li onClick=\"showDoc('anuncios/"+encodeURI(fileName)+"')\"><img src=\"anuncios/img/"+encodeURI(fileName).replace(".pdf",".jpg")+"\" /></li>";
-            if( i%6 == 0) {
-                if( i!= total ){
-                    html += "</ul><ul>";
-                };
-            }
-            if( i == total){
-                html += "</ul>";
-            }
             //html += "<li onClick=\"showDoc('anuncios/"+encodeURI(fileName)+"')\"><span class=\"title\">"+fileNameSplitted[0]+"</span>&nbsp;&nbsp;<span class=\"subtitle\">"+fileNameSplitted[1].replace(".pdf","")+"</span></li>";
             //listing.push(new File(fileNameSplitted[0],fileNameSplitted[1]),fileName);
         }
@@ -56,23 +44,10 @@ function fileListPromo(){
     else{
         var jsonRetour = decodeURI(env_Browse_Directory) ;
         var jsArray = JSON.parse(jsonRetour);
-        var total = jsArray.FILES.length;
-        for(var i = 1 ; i <= total ; i++){
+        for(var i = 0 ; i < jsArray.FILES.length ; i++){
             var fileName = jsArray.FILES[i].FILE;
             var fileNameSplitted = fileName.split(separator);
-            if(i == 1) {
-                html += "<ul>";
-            }
             html += "<li onClick=\"showDoc('material_promocional/"+encodeURI(fileName)+"')\"><img src=\"material_promocional/img/"+encodeURI(fileName).replace(".pdf",".jpg")+"\" /></li>";
-            if( i%6 == 0) {
-                if( i!= total ){
-                    html += "</ul><ul>";
-                };
-            }
-            if( i == total){
-                html += "</ul>";
-            }
-
         }
     }
 
@@ -89,23 +64,10 @@ function fileListPromocoes(){
     else{
         var jsonRetour = decodeURI(env_Browse_Directory) ;
         var jsArray = JSON.parse(jsonRetour);
-        var total = jsArray.FILES.length;
-        for(var i = 1 ; i <= total ; i++){
+        for(var i = 0 ; i < jsArray.FILES.length ; i++){
             var fileName = jsArray.FILES[i].FILE;
             var fileNameSplitted = fileName.split(separator);
-            if(i == 1) {
-                html += "<ul>";
-            }
             html += "<li onClick=\"showDoc('promocoes/"+encodeURI(fileName)+"')\"><img src=\"promocoes/img/"+encodeURI(fileName).replace(".pdf",".jpg")+"\" /></li>";
-            if( i%6 == 0) {
-                if( i!= total ){
-                    html += "</ul><ul>";
-                };
-            }
-            if( i == total){
-                html += "</ul>";
-            }
-
         }
     }
 
@@ -122,23 +84,11 @@ function fileListLancamentos(){
     else{
         var jsonRetour = decodeURI(env_Browse_Directory) ;
         var jsArray = JSON.parse(jsonRetour);
-        var total = jsArray.FILES.length;
-        for(var i = 1 ; i <= total ; i++){
+        for(var i = 0 ; i < jsArray.FILES.length ; i++)
+        {
             var fileName = jsArray.FILES[i].FILE;
             var fileNameSplitted = fileName.split(separator);
-            if(i == 1) {
-                html += "<ul>";
-            }
             html += "<li onClick=\"showDoc('lancamentos/"+encodeURI(fileName)+"')\"><img src=\"lancamentos/img/"+encodeURI(fileName).replace(".pdf",".jpg")+"\" /></li>";
-            if( i%6 == 0) {
-                if( i!= total ){
-                    html += "</ul><ul>";
-                };
-            }
-            if( i == total){
-                html += "</ul>";
-            }
-
         }
     }
 
@@ -155,23 +105,11 @@ function fileListVideos(){
     else{
         var jsonRetour = decodeURI(env_Browse_Directory) ;
         var jsArray = JSON.parse(jsonRetour);
-        var total = jsArray.FILES.length;
-        for(var i = 1 ; i <= total ; i++){
+        for(var i = 0 ; i < jsArray.FILES.length ; i++)
+        {
             var fileName = jsArray.FILES[i].FILE;
             var fileNameSplitted = fileName.split(separator);
-            if(i == 1) {
-                html += "<ul>";
-            }
-            html += "<li onClick=\"showDoc('videos/"+encodeURI(fileName)+"')\"><img src=\"videos/img/"+encodeURI(fileName).replace(".pdf",".mp4")+"\" /></li>";
-            if( i%6 == 0) {
-                if( i!= total ){
-                    html += "</ul><ul>";
-                };
-            }
-            if( i == total){
-                html += "</ul>";
-            }
-
+            html += "<li onClick=\"showDoc('videos/"+encodeURI(fileName)+"')\"><img src=\"videos/img/"+encodeURI(fileName).replace(".pdf",".mov")+"\" /></li>";
         }
     }
 
@@ -189,27 +127,15 @@ function fileListProduits(){
     else{
         var jsonRetour = decodeURI(env_Browse_Directory) ;
         var jsArray = JSON.parse(jsonRetour);
-        var total = jsArray.FILES.length;
-        for(var i = 1 ; i <= total ; i++){
+        for(var i = 0 ; i < jsArray.FILES.length ; i++)
+        {
             var fileName = jsArray.FILES[i].FILE;
             var fileNameSplitted = fileName.split(separator);
-            if(i == 1) {
-                html += "<ul>";
-            }
             html += "<li onClick=\"showDoc('produtos_lancamento/"+encodeURI(fileName)+"')\"><img src=\"produtos_lancamento/img/"+encodeURI(fileName).replace(".pdf",".jpg")+"\" /></li>";
-            if( i%6 == 0) {
-                if( i!= total ){
-                    html += "</ul><ul>";
-                };
-            }
-            if( i == total){
-                html += "</ul>";
-            }
-
         }
     }
 
-    $("#produits-list").html(html);
+    $("#nouveautes-list").html(html);
 }
 function showDoc(path){
     fctOpenDocument(path);
